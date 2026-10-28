@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" fill="none" opacity=".52">
+ <defs>
+  <linearGradient id="sky" x1="800" y1="0" x2="800" y2="610" gradientUnits="userSpaceOnUse"><stop stop-color="#F4EBDD" stop-opacity=".52"/><stop offset=".56" stop-color="#F2E6D4" stop-opacity=".26"/><stop offset="1" stop-color="#E8E8D5" stop-opacity=".12"/></linearGradient>
+  <linearGradient id="water" x1="800" y1="575" x2="800" y2="1000" gradientUnits="userSpaceOnUse"><stop stop-color="#B7D0C3" stop-opacity=".28"/><stop offset=".5" stop-color="#BED7CB" stop-opacity=".24"/><stop offset="1" stop-color="#D5DCC8" stop-opacity=".34"/></linearGradient>
+  <linearGradient id="hull" x1="630" y1="550" x2="1110" y2="708" gradientUnits="userSpaceOnUse"><stop stop-color="#817763" stop-opacity=".45"/><stop offset=".52" stop-color="#665F50" stop-opacity=".55"/><stop offset="1" stop-color="#4D5146" stop-opacity=".42"/></linearGradient>
+  <linearGradient id="roof" x1="660" y1="435" x2="1070" y2="553" gradientUnits="userSpaceOnUse"><stop stop-color="#B48D62" stop-opacity=".42"/><stop offset="1" stop-color="#8B7355" stop-opacity=".37"/></linearGradient>
+  <linearGradient id="shore" x1="800" y1="460" x2="800" y2="634" gradientUnits="userSpaceOnUse"><stop stop-color="#9BA888" stop-opacity=".12"/><stop offset="1" stop-color="#788C71" stop-opacity=".26"/></linearGradient>
+ </defs>
+
+ <!-- airy parchment sky and a very soft late-afternoon wash -->
+ <path d="M0 0h1600v590H0z" fill="url(#sky)"/>
+ <path d="M285 218c155-101 337-114 492-65 148 47 291 29 441-38 119-53 231-45 382 3v170H285V218Z" fill="#E8D4B6" opacity=".10"/>
+ <path d="M0 323c205-70 384-85 548-38m58 3c118-42 226-36 336 4m91-12c135-46 282-47 446 7" stroke="#B5B69B" stroke-width="2" opacity=".22" stroke-linecap="round"/>
+ <path d="M80 230c55-20 102-18 143 7 34 21 73 22 117 3m563-42c46-18 85-16 119 5 30 18 63 19 99 3m193 54c37-14 69-12 96 4 23 14 48 15 76 4" stroke="#E4D5BD" stroke-width="10" opacity=".17" stroke-linecap="round"/>
+ <circle cx="1275" cy="352" r="43" fill="#E6C994" opacity=".22"/><circle cx="1275" cy="352" r="54" stroke="#D7C39D" stroke-width="2" opacity=".15"/>
+
+ <!-- far banks and the layered green edge of the backwaters -->
+ <path d="M0 516c118-49 204-31 298-9 101 24 192 18 286-14 113-40 222-42 335-1 120 44 231 34 344-4 121-41 223-39 337 6v127H0V516Z" fill="url(#shore)"/>
+ <path d="M0 565c155-34 270-25 387 3 144 34 242 22 353-14 147-47 259-23 383 11 132 36 252 30 477-14" stroke="#87977D" stroke-width="3" opacity=".26" stroke-linecap="round"/>
+ <path d="M0 589c182-23 303-10 428 13 150 27 268 11 382-22 153-44 271-13 405 15 124 25 239 21 385-10" stroke="#A6B293" stroke-width="2" opacity=".22" stroke-linecap="round"/>
+
+ <!-- distant coconut groves, kept soft behind the homestead -->
+ <g stroke="#60795F" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M123 580c8-102 20-176 43-244m-35 146c-38-47-73-74-119-91m125 61c39-44 79-65 127-76m-132 42c-34-28-69-43-108-47m112 19c35-30 70-43 111-48" stroke-width="5" opacity=".19"/>
+  <path d="M123 580c8-102 20-176 43-244m-35 146c-38-47-73-74-119-91m125 61c39-44 79-65 127-76m-132 42c-34-28-69-43-108-47m112 19c35-30 70-43 111-48" stroke-width="1.6" opacity=".17"/>
+  <path d="M1480 574c-8-99-19-173-43-240m35 141c37-47 72-73 117-90m-122 60c-40-43-79-64-127-75m132 42c34-28 68-43 107-47m-112 19c-35-29-71-42-112-47" stroke-width="5" opacity=".18"/>
+  <path d="M1480 574c-8-99-19-173-43-240m35 141c37-47 72-73 117-90m-122 60c-40-43-79-64-127-75m132 42c34-28 68-43 107-47m-112 19c-35-29-71-42-112-47" stroke-width="1.6" opacity=".16"/>
+  <path d="M448 578c5-73 15-124 31-169m-25 102c-27-31-52-48-84-57m87 39c28-29 55-44 88-49m-91 23c-24-18-48-27-76-30m80 12c25-19 50-27 78-30" stroke-width="3.6" opacity=".13"/>
+  <path d="M1198 578c-4-68-12-116-27-157m23 96c24-29 47-43 76-52m-79 36c-26-26-51-40-81-45m84 22c21-17 44-25 69-27m-73 11c-24-18-46-26-72-28" stroke-width="3.5" opacity=".14"/>
+ </g>
+
+ <!-- little riverside nalukettu home, screened by trees -->
+ <g stroke="#817D68" stroke-linecap="round" stroke-linejoin="round">
+  <path d="m165 535 83-67 103 67m-157 0 54-44 70 45" fill="#DCC7A7" fill-opacity=".23" stroke-width="3" opacity=".37"/>
+  <path d="M202 535v66h111v-66m-85 2v64m59-64v64m-99 0h141" fill="#EEE9D8" fill-opacity=".24" stroke-width="2.4" opacity=".32"/>
+  <path d="M226 556h15v22h-15zm43 0h15v22h-15z" fill="#C3B292" fill-opacity=".24" stroke-width="1.6" opacity=".4"/>
+ </g>
+
+ <!-- softly painted backwater -->
+ <path d="M0 583c169-23 299-12 426 12 151 28 268 11 384-21 151-43 269-13 402 15 124 26 238 20 388-10v421H0V583Z" fill="url(#water)"/>
+ <path d="M0 601c177-19 302-8 437 16 145 26 268 6 389-26 146-39 260-11 393 17 124 25 236 18 381-10" stroke="#7FA194" stroke-width="2.4" opacity=".22" stroke-linecap="round"/>
+ <path d="M38 644c104-12 190-9 269 4m48 0c93-8 172-4 244 6m149-15c91-12 168-8 237 5m63 0c107-10 198-6 293 9m-1277 38c88-8 160-6 233 5m456-3c82-8 153-4 215 5m101-4c91-9 166-6 243 5M89 747c99-11 175-8 256 4m95 1c96-8 168-5 239 5m267-6c103-8 180-3 268 8m-1009 53c106-9 186-6 270 6m155-4c107-10 190-5 277 6m127-5c77-8 143-5 213 4" stroke="#F6F0DE" stroke-width="2.2" opacity=".35" stroke-linecap="round"/>
+
+ <!-- long Kerala houseboat with woven canopy and fine ink outlines -->
+ <g stroke-linecap="round" stroke-linejoin="round">
+  <path d="M583 547c84-14 169-22 257-20 122 2 225 18 326 42-18 58-76 105-178 126-124 25-278 18-382-15-55-17-92-42-115-71 25-31 56-51 92-62Z" fill="url(#hull)" stroke="#615D4D" stroke-width="5" opacity=".72"/>
+  <path d="M594 570c102 21 207 31 325 31 96 0 173-9 239-25m-941 208c70 7 133 8 201 3" stroke="#E9D8AE" stroke-width="3" opacity=".43"/>
+  <path d="M655 540c25-46 83-93 154-117 85-29 186-27 275 5 49 18 91 47 125 85-182-39-367-33-554 27Z" fill="url(#roof)" stroke="#81745F" stroke-width="4" opacity=".68"/>
+  <path d="M674 520c54-49 109-76 169-88 83-16 155-7 224 20m-513 104c103 29 216 41 344 38 91-2 164-9 237-24" stroke="#F0E4C7" stroke-width="3" opacity=".43"/>
+  <path d="M714 518c59-41 120-59 187-60 65-1 124 13 181 43m-432 54c101 22 212 31 324 28" stroke="#786B54" stroke-width="2.2" opacity=".42"/>
+  <path d="M736 532v44m55-56v63m57-65v68m59-67v65m58-57v47m-257-31c100 20 194 29 292 26" stroke="#E8D9B8" stroke-width="2.4" opacity=".4"/>
+  <path d="M687 576c30 4 54 5 80 5m156 6c37-1 67-4 100-9" stroke="#F4EAD2" stroke-width="2" opacity=".38"/>
+  <path d="M580 611c115 46 253 60 408 49 70-5 130-18 178-37" stroke="#E9D9B6" stroke-width="3" opacity=".48"/>
+ </g>
+
+ <!-- a small canoe near the lower bank -->
+ <g stroke-linecap="round" stroke-linejoin="round">
+  <path d="M191 823c65 12 133 12 201-1-17 37-47 61-93 72-45 9-82 2-111-20-11-9-17-24-17-38 6-6 12-10 20-13Z" fill="#766B58" fill-opacity=".22" stroke="#716C5A" stroke-width="3" opacity=".50"/>
+  <path d="M202 836c58 9 118 8 176-2m-131 22 44-37m-2 42 43-39" stroke="#E9D9B8" stroke-width="2" opacity=".38"/>
+ </g>
+
+ <!-- muted reflections and rippling strokes, leaving the page airy -->
+ <g stroke="#718F83" stroke-linecap="round">
+  <path d="M613 709c106 30 216 36 334 18m-305 17c94 24 189 28 287 15m-236 28c86 14 160 15 237 4m-584 44c53-5 98-3 146 4m454 59c76-8 136-5 195 5m-360 37c105-8 194-5 282 6m283-44c63-7 119-4 173 4" stroke-width="3" opacity=".18"/>
+  <path d="M675 780c41 9 78 11 119 6m123-3c40-1 73-4 105-9m-596 99c38-5 69-3 102 3m416 93c43-5 79-3 116 2m-776-73c44-4 81-2 119 3" stroke-width="1.7" opacity=".18"/>
+ </g>
+</svg>

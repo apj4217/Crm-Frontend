@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 1000" fill="none" opacity=".54">
+ <defs>
+  <linearGradient id="leafWash" x1="160" y1="80" x2="160" y2="980" gradientUnits="userSpaceOnUse"><stop stop-color="#E9EDCE" stop-opacity=".27"/><stop offset=".52" stop-color="#D8E6C4" stop-opacity=".18"/><stop offset="1" stop-color="#E8D9AF" stop-opacity=".25"/></linearGradient>
+  <linearGradient id="roofWash" x1="70" y1="570" x2="245" y2="690" gradientUnits="userSpaceOnUse"><stop stop-color="#E8D7A8" stop-opacity=".3"/><stop offset="1" stop-color="#C6D7B6" stop-opacity=".25"/></linearGradient>
+ </defs>
+ <!-- airy coconut canopy, pale sage ink with warm ivory highlights -->
+ <g stroke-linecap="round" stroke-linejoin="round">
+  <path d="M214 1000c-13-180-13-354 1-510 10-110 27-196 55-275" stroke="#E8E1C4" stroke-width="3" opacity=".23"/>
+  <path d="M264 246c-41-46-89-75-151-88m157 88c0-63-19-116-58-163m61 164c39-57 87-90 149-105m-153 108c59-31 117-41 181-30m-185 31c-62-23-122-24-185-8" stroke="#D8E6C4" stroke-width="3" opacity=".31"/>
+  <path d="M262 236c-51-36-98-57-151-64m155 69c4-53-10-97-40-135m47 139c35-47 74-73 127-85m-132 92c49-22 96-27 148-16m-154 21c-43-11-87-10-132 3" stroke="#F3EBCD" stroke-width="1.5" opacity=".35"/>
+  <path d="M224 436c-39-34-78-50-124-54m127 59c5-47-6-85-32-119m37 124c31-39 67-61 112-69m-117 76c43-18 83-21 127-11m-132 16c-41-10-77-8-121 4" stroke="#DCE6C9" stroke-width="2.2" opacity=".25"/>
+  <path d="M258 236c-1 86-12 181-27 275m13-200-14-6m5 77 18-8m-30 89-14-3m28-120 20-10" stroke="#EFE6C9" stroke-width="1.4" opacity=".3"/>
+ </g>
+ <!-- broad banana leaves rising from the lower garden -->
+ <g stroke="#DCE8C8" stroke-linecap="round" stroke-linejoin="round" fill="url(#leafWash)">
+  <path d="M62 858c-27-85-20-152 25-201 18 66 11 131-25 201Z" stroke-width="2.2" opacity=".35"/>
+  <path d="M72 868c15-91 51-151 112-176-9 76-47 134-112 176Z" stroke-width="2.2" opacity=".34"/>
+  <path d="M65 878c-66-48-98-103-94-171 53 43 84 99 94 171Z" stroke-width="2.2" opacity=".31"/>
+  <path d="M78 876c49-70 102-106 169-105-41 59-96 95-169 105Z" stroke-width="2" opacity=".3"/>
+  <path d="M59 859 86 661m-17 215L-2 711m78 159 98-151m-99 165 169-113" stroke="#EFE7CA" stroke-width="1.35" opacity=".35"/>
+ </g>
+ <!-- Kerala nalukettu-inspired tiled home, pale warm roof and open verandah -->
+ <g stroke-linecap="round" stroke-linejoin="round">
+  <path d="m26 655 105-87 140 84m-214-2 73-60 117 65" fill="url(#roofWash)" stroke="#EFE2BD" stroke-width="2.5" opacity=".72"/>
+  <path d="M72 658v103h160V661m-128-4v104m99-103v103M53 762h202m-181 10h160" fill="#DDE8D3" fill-opacity=".13" stroke="#E5E4C7" stroke-width="2" opacity=".57"/>
+  <path d="M101 664h19v40h-19zm76 0h19v40h-19zm-33 38h22v60h-22z" fill="#EEE5CC" fill-opacity=".26" stroke="#E8E0C2" stroke-width="1.7" opacity=".6"/>
+  <path d="M90 640v-33h25v33m61-1v-34h27v36m-169 129h218" stroke="#E7D7AD" stroke-width="1.7" opacity=".42"/>
+  <path d="M48 652c28-4 49-4 70-1m91 2c20-4 40-4 61 1M62 777c-10 20-9 39 2 54m202-57c8 20 7 39-2 57" stroke="#C7D5B8" stroke-width="1.7" opacity=".3"/>
+ </g>
+ <!-- garden path and soft backwater-like ground lines; no boat or floral branch -->
+ <g stroke="#E5E7C9" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M0 821c66 16 121 17 188 4 47-9 89-9 132 3M0 857c80 12 147 10 211-2 40-8 75-8 109-1m-320 42c62 8 110 8 162 0m83 1c28-2 50-1 75 3m-291 43c68 5 119 1 176-7 44-6 76-4 110 2" stroke-width="1.7" opacity=".29"/>
+  <path d="M29 829c-6 17-4 33 7 48m247-53c-5 18-4 32 6 47M92 934l-8 22m175-22 8 22" stroke-width="1.5" opacity=".24"/>
+ </g>
+ <!-- extra side-garden botanical sketch -->
+ <g stroke="#E6E7C9" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity=".28">
+  <path d="M287 620c-38-39-57-80-59-128m38 91c-24-9-43-23-57-44 23 1 42 13 57 44Zm-25-49c-7-24-5-45 7-65 11 21 10 43-7 65Zm18 27c10-21 27-35 51-42-7 21-24 36-51 42Z" stroke-width="2"/>
+  <path d="M37 498c30-24 56-52 78-85m-61 68c-2-20 4-37 18-51 6 19 1 35-18 51Zm22-22c-1-22 6-41 23-56 5 21-3 39-23 56Zm21-20c9-19 24-31 45-36-7 18-22 30-45 36Z" stroke-width="1.7"/>
+  <path d="M15 550c30-5 52-3 75 5m140 18c27-8 49-8 72-1M31 590c21-4 37-3 54 2m162 11c18-5 34-4 49 0" stroke-width="1.4" opacity=".75"/>
+ </g></svg>
