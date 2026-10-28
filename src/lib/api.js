@@ -1,4 +1,6 @@
-const API_ROOT = (import.meta.env.VITE_API_BASE_URL || "/api").replace(/\/+$/, "");
+import { normalizeApiBase } from "./apiBase.js";
+
+const API_ROOT = normalizeApiBase(import.meta.env.VITE_API_BASE_URL);
 
 export class ApiError extends Error {
   constructor(message, status, code = "REQUEST_FAILED", details) {
