@@ -2,6 +2,15 @@ import { normalizeApiBase } from "./apiBase.js";
 
 const API_ROOT = normalizeApiBase(import.meta.env.VITE_API_BASE_URL);
 
+export function photoImageProps(source) {
+  const value = String(source || "");
+  if (!value || /^(blob:|data:|https?:\/\/)/i.test(value)) return { src: value };
+  const apiBase = new URL(API_ROOT, window.location.origin);
+  const url = new URL(value, apiBase.origin);
+  const usesAuthenticatedApi = url.origin === apiBase.origin && url.pathname.startsWith("/api/medicals/");
+  return { src: url.href, ...(usesAuthenticatedApi ? { crossOrigin: "use-credentials" } : {}) };
+}
+
 export class ApiError extends Error {
   constructor(message, status, code = "REQUEST_FAILED", details) {
     super(message);
