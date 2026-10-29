@@ -6,7 +6,7 @@ import {
   MapPin, LocateFixed, ExternalLink, Store, Camera, UserRound, Phone, Mail, Search, Plus,
   Filter, MoreHorizontal, ChevronDown, CalendarClock, MonitorPlay, FlaskConical, Clock3, CheckCircle2,
   AlertTriangle, CalendarDays, MessageCircle, PhoneCall, MapPinned, FileText, Download,
-  ArrowUpRight, ShieldCheck, Users, UserCog, RefreshCw, Check, X, Activity, Building2, Target, Zap,
+  ArrowUpRight, ArrowLeft, ShieldCheck, Users, UserCog, RefreshCw, Check, X, Activity, Building2, Target, Zap,
   TimerReset, CircleDollarSign, ClipboardCheck, Sparkles, SwitchCamera, ImagePlus, Pencil, Trash2, Eye
 } from "lucide-react";
 import { toast } from "sonner";
@@ -25,6 +25,7 @@ function ImageLightbox({ src, title, onClose }) {
   if (!src) return null;
   return createPortal(
     <div className="fixed inset-0 z-[230] flex items-center justify-center bg-slate-950/90 p-3 backdrop-blur-md sm:p-8" role="dialog" aria-modal="true" aria-label={title} onMouseDown={(event) => { if (event.target === event.currentTarget) onClose(); }}>
+      <button type="button" onClick={onClose} className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-white/25"><ArrowLeft size={17}/> Back to account</button>
       <button type="button" aria-label="Close image viewer" onClick={onClose} className="absolute right-4 top-4 rounded-full bg-white/15 p-3 text-white transition hover:bg-white/25"><X size={20}/></button>
       <div className="flex max-h-full max-w-full flex-col items-center gap-3"><img {...photoImageProps(src)} alt={title} className="max-h-[82vh] max-w-[92vw] rounded-2xl object-contain shadow-2xl"/><p className="text-sm font-semibold text-white">{title}</p></div>
     </div>, document.body
