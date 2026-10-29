@@ -6,8 +6,9 @@ export function photoImageProps(source) {
   const value = String(source || "");
   if (!value || /^(blob:|data:|https?:\/\/)/i.test(value)) return { src: value };
   const apiBase = new URL(API_ROOT, window.location.origin);
-  const url = new URL(value, apiBase.origin);
-  const usesAuthenticatedApi = url.origin === apiBase.origin && url.pathname.startsWith("/api/medicals/");
+  const isMedicalApiPath = value.startsWith("/api/medicals/");
+  const url = new URL(value, isMedicalApiPath ? apiBase.origin : window.location.origin);
+  const usesAuthenticatedApi = isMedicalApiPath && url.origin === apiBase.origin;
   return { src: url.href, ...(usesAuthenticatedApi ? { crossOrigin: "use-credentials" } : {}) };
 }
 
