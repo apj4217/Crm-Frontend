@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { ArrowRight, Eye, EyeOff, Leaf, LockKeyhole, Mail, ShieldCheck } from "lucide-react";
+import { ArrowRight, Building2, CalendarClock, ChartNoAxesCombined, Eye, EyeOff, Leaf, LockKeyhole, Mail, ShieldCheck } from "lucide-react";
 import { toast } from "sonner";
 import { api } from "../lib/api";
+import botanicalBranch from "../assets/botanical-branch.svg";
 
 export default function AuthScreen({ user, onAuthenticated }) {
   const [email, setEmail] = useState("");
@@ -71,21 +72,26 @@ export default function AuthScreen({ user, onAuthenticated }) {
   return <div className="auth-screen relative flex min-h-screen items-center justify-center overflow-hidden bg-[#f4f2e9] px-3 py-5 sm:px-6 sm:py-8">
     <div className="pointer-events-none absolute -left-28 -top-28 h-80 w-80 rounded-full bg-[#dce7d2]/45 blur-3xl"/>
     <div className="pointer-events-none absolute -bottom-36 -right-24 h-96 w-96 rounded-full bg-[#eadfd0]/60 blur-3xl"/>
-    <div className="relative grid w-full max-w-5xl overflow-hidden rounded-[24px] border border-[#dfe1d3] bg-[#fbfaf5] shadow-[0_24px_80px_rgba(40,58,39,.10)] lg:min-h-[620px] lg:grid-cols-[.92fr_1.08fr]">
+    <img src={botanicalBranch} alt="" aria-hidden="true" className="pointer-events-none absolute -bottom-12 -right-14 z-0 w-52 rotate-[-12deg] opacity-[.12] lg:hidden"/>
+    <div className="relative z-10 grid w-full max-w-6xl overflow-hidden rounded-[28px] border border-[#dfe1d3] bg-[#fbfaf5] shadow-[0_30px_100px_rgba(40,58,39,.14)] lg:min-h-[650px] lg:grid-cols-[.98fr_1.02fr]">
       <aside className="relative hidden flex-col justify-between overflow-hidden bg-gradient-to-br from-[#e4ebdc] via-[#edf0e5] to-[#f0e8d8] p-9 text-[#294638] lg:flex xl:p-11">
         <div className="pointer-events-none absolute -right-24 top-20 h-64 w-64 rounded-full border border-[#c9d8bf]/70"/>
         <div className="pointer-events-none absolute -right-10 top-36 h-36 w-36 rounded-full border border-[#c9d8bf]/70"/>
+        <img src={botanicalBranch} alt="" aria-hidden="true" className="pointer-events-none absolute -bottom-16 -right-10 z-0 w-[290px] opacity-[.32]"/>
         <div className="relative">
-          <div className="mb-14 flex items-center gap-3"><div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/80 bg-[#fbfaf5]/85 text-[#456c4c] shadow-sm ring-1 ring-[#dce5d3]"><Leaf size={21}/></div><div><p className="font-display text-lg font-extrabold tracking-tight">CRM</p></div></div>
-          <p className="mb-3 text-[11px] font-bold uppercase tracking-[.2em] text-[#456c4c]">Customer relationship workspace</p>
-          <h1 className="font-display text-4xl font-extrabold leading-[1.13] tracking-tight text-[#294638] xl:text-[42px]">Every customer.<br/>Every opportunity.<br/><span className="text-[#456c4c]">A clearer way to grow.</span></h1>
-          
+          <div className="mb-16 flex items-center gap-3"><div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/80 bg-[#fbfaf5]/85 text-[#456c4c] shadow-sm ring-1 ring-[#dce5d3]"><Leaf size={22}/></div><div><p className="font-display text-xl font-extrabold tracking-tight">CRM</p><p className="text-[10px] font-bold uppercase tracking-[.18em] text-[#71816b]">Kerala workspace</p></div></div>
+          <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/80 bg-white/55 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[.18em] text-[#456c4c]"><span className="h-1.5 w-1.5 rounded-full bg-[#78956d]"/>Customer relationships, in one place</p>
+          <h1 className="mt-3 max-w-md font-display text-4xl font-extrabold leading-[1.12] tracking-tight text-[#294638] xl:text-[44px]">Grow every<br/>customer connection.</h1>
+          <p className="mt-4 max-w-sm text-sm leading-6 text-[#647465]">A clear, calm workspace for your accounts, sales pipeline and follow-ups.</p>
+          <div className="mt-9 grid max-w-md grid-cols-3 gap-2.5">
+            {[{ icon: Building2, label: "Accounts" }, { icon: ChartNoAxesCombined, label: "Pipeline" }, { icon: CalendarClock, label: "Follow-ups" }].map(({ icon: Icon, label }) => <div key={label} className="rounded-2xl border border-white/80 bg-white/55 px-3 py-3.5 shadow-sm backdrop-blur-sm"><Icon size={17} className="mb-3 text-[#557454]"/><p className="text-[11px] font-bold text-[#405b46]">{label}</p></div>)}
+          </div>
         </div>
         <div className="relative flex items-center gap-2 text-xs text-[#657565]"><ShieldCheck size={16}/><span>Secure access · Role-based permissions</span></div>
       </aside>
       <section className="flex min-h-[min(760px,calc(100dvh-40px))] flex-col justify-center p-5 sm:p-10 lg:px-12 xl:px-14">
         <div className="mb-9 flex items-center gap-3 lg:hidden"><div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#345842] text-white shadow-sm shadow-[#d6e0ce]"><Leaf size={20}/></div><div><p className="font-display text-lg font-extrabold text-slate-900">CRM</p></div></div>
-        <div className="mb-7"><div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[#e8eee0] text-[#456c4c]"><LockKeyhole size={19}/></div><h2 className="font-display text-2xl font-extrabold tracking-tight text-[#294638]">{needsInvite ? "Set up your account" : needsReset ? "Choose a new password" : forgotMode ? "Reset your password" : needsChange ? "Create a new password" : "Welcome back"}</h2><p className="mt-2 text-sm leading-6 text-slate-500">{needsInvite ? "Choose a secure password to activate your Atlas CRM access." : needsReset ? "Create a new password for your Atlas CRM account." : forgotMode ? "Enter your work email and we’ll send a secure reset link if it matches an active account." : needsChange ? "Choose a new password to secure your account." : "Sign in to continue to your workspace."}</p></div>
+        <div className="mb-7"><div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[#e8eee0] text-[#456c4c]"><LockKeyhole size={19}/></div><p className="mb-2 text-[10px] font-bold uppercase tracking-[.18em] text-[#71816b]">Workspace access</p><h2 className="font-display text-3xl font-extrabold tracking-tight text-[#294638]">{needsInvite ? "Set up your account" : needsReset ? "Choose a new password" : forgotMode ? "Reset your password" : needsChange ? "Create a new password" : "Welcome back"}</h2><p className="mt-2 text-sm leading-6 text-slate-500">{needsInvite ? "Choose a secure password to activate your Atlas CRM access." : needsReset ? "Create a new password for your Atlas CRM account." : forgotMode ? "Enter your work email and we’ll send a secure reset link if it matches an active account." : needsChange ? "Choose a new password to secure your account." : "Sign in to continue to your workspace."}</p></div>
         <form onSubmit={submit} className="space-y-4">
           {!needsChange && !needsInvite && !needsReset ? <>
             <label className="block"><span className="mb-1.5 block text-xs font-semibold text-slate-700">Work email</span><span className="relative block"><Mail size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"/><input required autoComplete="username" type="email" value={email} onChange={(e) => { setEmail(e.target.value); setResetRequested(false); }} placeholder="name@company.com" className="ui-field h-12 w-full rounded-xl border border-slate-200 bg-white pl-10 pr-3 text-sm outline-none transition focus:border-[#93aa8b] focus:ring-4 focus:ring-[#e6eddf]"/></span></label>
