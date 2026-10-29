@@ -22,15 +22,26 @@ const localitiesByCity = {
   Palakkad: ["Sultanpet", "Olavakkode", "Kallekkad", "Stadium Bypass", "Chandranagar"]
 };
 
+function sampleAccountIndex(account) {
+  const name = String(account?.medicalName || "").trim();
+  const exactIndex = sampleAccounts.findIndex((sampleName) => sampleName.toLowerCase() === name.toLowerCase());
+  if (exactIndex >= 0) return exactIndex;
+  const legacy = name.match(/^TEST DATA \| (.+) (\d{2})$/i);
+  if (legacy) {
+    const index = sampleAccounts.findIndex((sampleName) => sampleName.toLowerCase() === legacy[1].toLowerCase());
+    if (index >= 0 && index + 1 === Number(legacy[2])) return index;
+  }
+  const emailMatch = String(account?.email || "").match(/^contact(\d{2})@example\.com$/i);
+  const emailIndex = emailMatch ? Number(emailMatch[1]) - 1 : -1;
+  return emailIndex >= 0 && sampleAccounts[emailIndex] && (!name || name === `TEST DATA | ${sampleAccounts[emailIndex]} ${String(emailIndex + 1).padStart(2, "0")}`) ? emailIndex : -1;
+}
+
 export function cleanSampleAccountRecord(account) {
-  const match = String(account?.email || "").match(/^contact(\d{2})@example\.com$/i);
-  if (!match) return account;
-  const index = Number(match[1]) - 1;
+  const index = sampleAccountIndex(account);
+  if (index < 0) return account;
   const name = sampleAccounts[index];
   const city = cities[index % cities.length];
   const locality = localitiesByCity[city][Math.floor(index / cities.length) % localitiesByCity[city].length];
-  const oldName = `TEST DATA | ${name} ${String(index + 1).padStart(2, "0")}`;
-  if (!name || (account.medicalName !== oldName && account.medicalName !== name)) return account;
   return {
     ...account,
     medicalName: name,
@@ -44,9 +55,8 @@ export function cleanSampleAccountRecord(account) {
 }
 
 export function accountPhoto(account) {
-  if (account?.medicalPhotoUrl) return account.medicalPhotoUrl;
-  const match = String(account?.email || "").match(/^contact(\d{2})@example\.com$/i);
-  if (!match || !sampleAccounts[Number(match[1]) - 1]) return "";
-  const imageIndex = (Number(match[1]) - 1) % 4 + 1;
+  const sampleIndex = sampleAccountIndex(account);
+  if (sampleIndex < 0) return account?.medicalPhotoUrl || "";
+  const imageIndex = sampleIndex % 4 + 1;
   return `/account-samples/account-${imageIndex}.jpg`;
 }
