@@ -1,11 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 920" fill="none">
   <defs>
-    <linearGradient id="wash" x1="90" y1="55" x2="620" y2="880" gradientUnits="userSpaceOnUse"><stop stop-color="#F7F2E4"/><stop offset=".56" stop-color="#E6EDDE"/><stop offset="1" stop-color="#D8E4D4"/></linearGradient>
     <linearGradient id="leaf" x1="245" y1="340" x2="548" y2="836" gradientUnits="userSpaceOnUse"><stop stop-color="#9EAF8D" stop-opacity=".24"/><stop offset="1" stop-color="#55775B" stop-opacity=".06"/></linearGradient>
     <radialGradient id="sun" cx="0" cy="0" r="1" gradientTransform="matrix(0 180 -180 0 566 186)" gradientUnits="userSpaceOnUse"><stop stop-color="#D8C78E" stop-opacity=".43"/><stop offset="1" stop-color="#D8C78E" stop-opacity="0"/></radialGradient>
   </defs>
-  <path fill="url(#wash)" d="M0 0h760v920H0z"/>
-  <path fill="url(#sun)" d="M386 0h374v374H386z"/>
   <circle cx="564" cy="184" r="47" fill="#E4D5A7" fill-opacity=".42"/>
   <circle cx="564" cy="184" r="63" stroke="#B7B18D" stroke-opacity=".28"/>
   <g stroke="#7E9279" stroke-linecap="round" opacity=".25">
