@@ -45,5 +45,8 @@ export function cleanSampleAccountRecord(account) {
 
 export function accountPhoto(account) {
   if (account?.medicalPhotoUrl) return account.medicalPhotoUrl;
-  return sampleAccountPhotoByEmail(account?.email);
+  const match = String(account?.email || "").match(/^contact(\d{2})@example\.com$/i);
+  if (!match || !sampleAccounts[Number(match[1]) - 1]) return "";
+  const imageIndex = (Number(match[1]) - 1) % 4 + 1;
+  return `/account-samples/account-${imageIndex}.jpg`;
 }
