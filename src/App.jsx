@@ -31,6 +31,7 @@ function App() {
   const [medicalSearchRequest, setMedicalSearchRequest] = useState({ term: "", key: 0 });
   const [authUser, setAuthUser] = useState(null);
   const [authLoading, setAuthLoading] = useState(true);
+  const [authCheckSlow, setAuthCheckSlow] = useState(false);
   const [notificationsOpen, setNotificationsOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
 
@@ -70,6 +71,11 @@ function App() {
       .catch((error) => { if (mounted && error.status !== 401) toast.error("Could not connect to CRM API", { description: error.message }); })
       .finally(() => { if (mounted) setAuthLoading(false); });
     return () => { mounted = false; };
+  }, []);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => setAuthCheckSlow(true), 3000);
+    return () => window.clearTimeout(timer);
   }, []);
 
   useEffect(() => { setMobileNav(false); }, [page]);
@@ -125,8 +131,8 @@ function App() {
       .slice(0, 8).map((item) => ({ type: "Account", title: item.medicalName, subtitle: `${item.ownerName} · ${item.locality || item.city || "Business"}`, id: item.id, record: item }));
   }, [filteredSearch, medicals]);
 
-  if (authLoading) return <div className="app-shell flex min-h-screen items-center justify-center bg-[#f7f9fd]"><div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-5 py-4 shadow-sm"><div className="h-8 w-8 animate-pulse rounded-xl bg-violet-100"/><div><p className="text-sm font-bold text-slate-800">CRM</p><p className="mt-1 text-xs text-slate-500">Signing you in…</p></div></div></div>;
   const authQuery = new URLSearchParams(window.location.search);
+  if (authLoading && !authCheckSlow && !authQuery.has("invite") && !authQuery.has("reset")) return <div className="app-shell flex min-h-screen items-center justify-center bg-[#f7f9fd]"><div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-5 py-4 shadow-sm"><div className="h-8 w-8 animate-pulse rounded-xl bg-violet-100"/><div><p className="text-sm font-bold text-slate-800">CRM</p><p className="mt-1 text-xs text-slate-500">Signing you in…</p></div></div></div>;
   if (authQuery.has("invite")) return <AuthScreen key="team-invitation" user={null} onAuthenticated={onAuthenticated}/>;
   if (authQuery.has("reset")) return <AuthScreen key="password-reset" user={null} onAuthenticated={onAuthenticated}/>;
   if (!authUser || authUser.mustChangePassword) return <AuthScreen key={authUser?.id || "login"} user={authUser} onAuthenticated={onAuthenticated}/>;
