@@ -24,10 +24,13 @@ function ImageLightbox({ src, title, onClose }) {
   }, [src, onClose]);
   if (!src) return null;
   return createPortal(
-    <div className="fixed inset-0 z-[230] flex items-center justify-center bg-slate-950/90 p-3 backdrop-blur-md sm:p-8" role="dialog" aria-modal="true" aria-label={title} onMouseDown={(event) => { if (event.target === event.currentTarget) onClose(); }}>
-      <button type="button" onClick={onClose} className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-white/25"><ArrowLeft size={17}/> Back to account</button>
-      <button type="button" aria-label="Close image viewer" onClick={onClose} className="absolute right-4 top-4 rounded-full bg-white/15 p-3 text-white transition hover:bg-white/25"><X size={20}/></button>
-      <div className="flex max-h-full max-w-full flex-col items-center gap-3"><img {...photoImageProps(src)} alt={title} className="max-h-[82vh] max-w-[92vw] rounded-2xl object-contain shadow-2xl"/><p className="text-sm font-semibold text-white">{title}</p></div>
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-slate-950/95 p-3 pb-16 pt-20 backdrop-blur-md sm:p-8 sm:pt-20" role="dialog" aria-modal="true" aria-label={title} onMouseDown={(event) => { if (event.target === event.currentTarget) onClose(); }}>
+      <header className="fixed inset-x-0 top-0 z-[10000] flex items-center justify-between border-b border-white/20 bg-slate-950/90 px-4 py-3 shadow-lg backdrop-blur-md sm:px-7">
+        <button type="button" onClick={onClose} className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-white/30 bg-white px-4 py-2.5 text-sm font-bold text-slate-900 shadow-md transition hover:bg-emerald-50"><ArrowLeft size={18}/> Back to account</button>
+        <span className="mx-3 truncate text-sm font-semibold text-white">{title}</span>
+        <button type="button" aria-label="Close image viewer" onClick={onClose} className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/30 bg-white/10 text-white transition hover:bg-white/20"><X size={20}/></button>
+      </header>
+      <div className="flex max-h-full max-w-full flex-col items-center gap-3"><img {...photoImageProps(src)} alt={title} className="max-h-[72vh] max-w-[92vw] rounded-2xl object-contain shadow-2xl sm:max-h-[78vh] sm:max-w-[88vw]"/><p className="text-sm font-semibold text-white">{title}</p></div>
     </div>, document.body
   );
 }
