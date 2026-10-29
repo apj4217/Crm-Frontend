@@ -930,17 +930,7 @@ html, body { background: #f4f2e9; color: #293b30; }
   background:
     linear-gradient(145deg, rgba(224, 234, 215, .98), rgba(240, 239, 225, .96) 58%, rgba(236, 225, 207, .92)) !important;
 }
-.auth-screen aside::after {
-  content: "";
-  position: absolute;
-  right: -26px;
-  bottom: -35px;
-  width: 260px;
-  height: 350px;
-  background: url("./assets/botanical-branch.svg") center / contain no-repeat;
-  opacity: .36;
-  pointer-events: none;
-}
+.auth-screen aside::after { display: none !important; }
 .auth-screen h1, .auth-screen h2 { font-family: Georgia, "Times New Roman", serif !important; font-weight: 500 !important; letter-spacing: -.04em !important; }
 .auth-screen h1 { font-size: clamp(36px, 3.4vw, 45px) !important; line-height: 1.12 !important; }
 .auth-screen .bg-violet-600 { background-color: #345842 !important; }
@@ -954,7 +944,6 @@ html, body { background: #f4f2e9; color: #293b30; }
 .auth-screen button[type="submit"] { border-radius: 999px !important; background: #345842 !important; box-shadow: 0 9px 22px rgba(45, 76, 53, .14) !important; }
 .auth-screen button[type="submit"]:hover { background: #294638 !important; }
 @media (max-width: 1023px) {
-  .auth-screen aside::after { opacity: .18; }
   .auth-screen > .relative.grid { border-radius: 22px !important; }
 }
 
