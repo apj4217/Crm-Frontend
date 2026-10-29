@@ -72,14 +72,11 @@ export default function AuthScreen({ user, onAuthenticated }) {
   return <div className="auth-screen relative flex min-h-screen items-center justify-center overflow-hidden bg-[#f4f2e9] px-3 py-5 sm:px-6 sm:py-8">
     <div className="pointer-events-none absolute -left-28 -top-28 h-80 w-80 rounded-full bg-[#dce7d2]/45 blur-3xl"/>
     <div className="pointer-events-none absolute -bottom-36 -right-24 h-96 w-96 rounded-full bg-[#eadfd0]/60 blur-3xl"/>
-    <img src={authSketch} alt="" aria-hidden="true" className="pointer-events-none absolute -left-[8vw] top-[3vh] z-0 hidden h-[94vh] w-[31vw] max-w-[430px] object-contain opacity-75 lg:block"/>
-    <img src={authSketch} alt="" aria-hidden="true" className="pointer-events-none absolute -right-[8vw] top-[3vh] z-0 hidden h-[94vh] w-[31vw] max-w-[430px] -scale-x-100 object-contain opacity-65 lg:block"/>
     <div className="relative z-10 grid w-full max-w-6xl overflow-hidden rounded-[28px] border border-[#dfe1d3] bg-[#fbfaf5] shadow-[0_30px_100px_rgba(40,58,39,.14)] lg:min-h-[650px] lg:grid-cols-[.98fr_1.02fr]">
       <aside className="relative hidden min-h-[650px] overflow-hidden bg-gradient-to-br from-[#e4ebdc] via-[#edf0e5] to-[#f0e8d8] lg:block" aria-hidden="true">
-        <img src={authSketch} alt="" className="absolute inset-0 h-full w-full object-cover"/>
+        <img src={authSketch} alt="" className="absolute inset-0 h-full w-full object-contain p-5 xl:p-7"/>
       </aside>
       <section className="relative isolate flex min-h-[min(760px,calc(100dvh-40px))] flex-col justify-center p-5 sm:p-10 lg:px-12 xl:px-14">
-        <img src={authSketch} alt="" aria-hidden="true" className="pointer-events-none absolute bottom-0 right-0 z-0 h-72 w-56 -scale-x-100 object-contain opacity-[.19] sm:h-80 sm:w-64"/>
         <div className="relative z-10 w-full">
         <div className="relative mb-5 h-32 overflow-hidden rounded-2xl border border-[#dfe5d9] bg-gradient-to-br from-[#e7ecdf] to-[#f3edde] lg:hidden"><img src={authSketch} alt="" className="h-full w-full object-cover object-[center_38%]"/></div>
         <div className="mb-9 flex items-center gap-3 lg:hidden"><div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#345842] text-white shadow-sm shadow-[#d6e0ce]"><Leaf size={20}/></div><div><p className="font-display text-lg font-extrabold text-slate-900">CRM</p></div></div>
