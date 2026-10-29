@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 920" fill="none">
   <defs>
-    <linearGradient id="leaf" x1="245" y1="340" x2="548" y2="836" gradientUnits="userSpaceOnUse"><stop stop-color="#9EAF8D" stop-opacity=".24"/><stop offset="1" stop-color="#55775B" stop-opacity=".06"/></linearGradient>
+    <linearGradient id="leaf" x1="245" y1="340" x2="548" y2="836" gradientUnits="userSpaceOnUse"><stop stop-color="#9EAF8D" stop-opacity=".34"/><stop offset="1" stop-color="#55775B" stop-opacity=".12"/></linearGradient>
     <radialGradient id="sun" cx="0" cy="0" r="1" gradientTransform="matrix(0 180 -180 0 566 186)" gradientUnits="userSpaceOnUse"><stop stop-color="#D8C78E" stop-opacity=".43"/><stop offset="1" stop-color="#D8C78E" stop-opacity="0"/></radialGradient>
   </defs>
   <circle cx="564" cy="184" r="47" fill="#E4D5A7" fill-opacity=".42"/>
@@ -22,7 +22,7 @@
     <path d="M494 229c65-45 105-105 117-181-56 42-95 102-117 181Z" fill="url(#leaf)" stroke-width="2.3"/>
     <path d="M494 229c34-78 36-151 6-220-20 75-22 149-6 220Z" fill="url(#leaf)" stroke-width="2.2"/>
   </g>
-  <g stroke="#788B70" stroke-width="1.05" stroke-linecap="round" opacity=".52">
+  <g stroke="#788B70" stroke-width="1.15" stroke-linecap="round" opacity=".76">
     <path d="M493 229C410 158 330 136 251 140M493 229c-87-32-169-27-251 12M493 229c-82 7-155 36-215 89M493 229c-54 47-90 103-104 173M493 229c7 78 37 145 92 203M493 229c48 66 110 105 186 120M493 229c77 42 153 54 230 34M493 229c80 5 152-17 215-68M493 229c64-45 104-105 118-181M493 229c35-78 37-151 7-220"/>
     <path d="m454 195-10-38m-18 30-24-34m-10 57-36-14m19 39-36 4m68 21-29 27m62-11-13 39m50-34 7 42m29-60 29 27m-5-52 41 2m-52-30 37-20m-58-8 19-37m-47 51-2-41"/>
   </g>
