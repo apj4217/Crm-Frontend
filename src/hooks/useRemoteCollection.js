@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 import { api } from "../lib/api";
+import { cleanSampleAccountRecord } from "../lib/accountSamplePhoto";
 
 function isFile(value) {
   return typeof File !== "undefined" && value instanceof File;
@@ -118,7 +119,7 @@ function mergeServerRecord(resource, serverRecord, currentRecord) {
     delete merged.removeOwnerPhoto;
   }
   if (resource === "users") delete merged.initialPassword;
-  return merged;
+  return resource === "medicals" ? cleanSampleAccountRecord(merged) : merged;
 }
 
 export function useRemoteCollection(resource, enabled = true) {
@@ -138,7 +139,10 @@ export function useRemoteCollection(resource, enabled = true) {
     try {
       const endpoint = resource === "followUps" ? "/follow-ups?limit=500" : `/${resource}?limit=500`;
       const rows = await api.get(endpoint);
-      const next = Array.isArray(rows) ? rows.map((x) => ({ ...x, id: String(x.id || x._id) })) : [];
+      const next = Array.isArray(rows) ? rows.map((x) => {
+        const row = { ...x, id: String(x.id || x._id) };
+        return resource === "medicals" ? cleanSampleAccountRecord(row) : row;
+      }) : [];
       itemsRef.current = next;
       setItems(next);
       return next;
